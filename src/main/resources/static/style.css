@@ -1,0 +1,201 @@
+body {
+    background-color: #0e0e0e;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+.intro h1 {
+    font-size: 3rem;
+}
+
+.intro .highlight {
+    color: #03dac6;
+}
+
+.intro .subtitle {
+    font-size: 1.5rem;
+    color: #bbbbbb;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.primary {
+    background-color: #03dac6;
+    color: #000;
+}
+
+.secondary {
+    background-color: transparent;
+    color: #03dac6;
+    border: 2px solid #03dac6;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.photo img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(3, 218, 198, 0.4);
+}
+
+.projects {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #121212;
+}
+
+.projects h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1f1f1f;
+    padding: 25px;
+    width: 280px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(3, 218, 198, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #03dac6;
+    font-weight: bold;
+}
+
+.about {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.timeline-item {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(3, 218, 198, 0.1);
+}
+
+.timeline-item span {
+    font-weight: bold;
+    color: #03dac6;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.gallery {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #121212;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(3, 218, 198, 0.3);
+}
+
+.skills {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.skill-item {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.skill-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bar-container {
+    background: #333;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.bar {
+    height: 100%;
+    background-color: #03dac6;
+    border-radius: 10px;
+    animation: fill 2s ease-in-out forwards;
+}
+
+.java { width: 90%; }
+.spring { width: 85%; }
+
+@keyframes fill {
+    from { width: 0; }
+    to { width: 100%; }
+}
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #03dac6;
+}
