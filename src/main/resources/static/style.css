@@ -150,10 +150,25 @@ a {
 }
 
 .gallery img {
-    width: 180px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(3, 218, 198, 0.3);
-}
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(3, 218, 198, 0.6);
+  }
+  @media (max-width: 768px) {
+    .gallery img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  
 
 .skills {
     padding: 80px 10%;
@@ -193,9 +208,199 @@ a {
     from { width: 0; }
     to { width: 100%; }
 }
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #03dac6;
+.hero-section {
+    display: flex;
+    
+    justify-content: space-between;
+    padding: 60px 10%;
+    background-color: #0e0e0e;
+    color: white;
+    flex-wrap: wrap; /* responsive */
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text h1 span {
+    color: #03dac6;
+  }
+  
+  .tagline {
+    font-size: 20px;
+    color: #a0dede;
+    margin-bottom: 30px;
+  }
+  
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    margin-right: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #03dac6;
+    color: #000;
+  }
+  
+  .btn-secondary {
+    border: 1px solid #03dac6;
+    color: #03dac6;
+    background: transparent;
+  }
+  
+  .hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(3, 218, 198, 0.3);
+  }
+  
+  .hero-image {
+    flex: 1;
+    text-align: right;
+    min-width: 300px;
+  }
+  
+  .hero-image img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(3, 218, 198, 0.3);
+  }
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .intro, .photo {
+      flex: unset;
+      margin-bottom: 20px;
+    }
+  
+    .profile-pic {
+      max-width: 200px;
+    }
+  }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  flex-wrap: wrap;
+  background-color: #0e0e0e; /* optional */
 }
+
+.intro {
+  flex: 1;
+  min-width: 280px;
+  color: white;
+}
+
+.photo {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+    background-color: #0e0e0e; /* dark theme */
+    gap: 30px;
+  }
+  
+  .intro {
+    flex: 1;
+    min-width: 280px;
+    color: #ffffff;
+  }
+  
+  .intro h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  
+  .intro .highlight {
+    color: #00f0ff;
+  }
+  
+  .subtitle {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+  }
+  
+  .buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    background-color: #00f0ff;
+    color: black;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #00c0cc;
+  }
+  
+  .btn.secondary {
+    background-color: transparent;
+    border: 2px solid #00f0ff;
+    color: #00f0ff;
+  }
+  
+  .btn.secondary:hover {
+    background-color: #00f0ff;
+    color: black;
+  }
+  
+  /* Profile Image Styling */
+  .photo {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes it circular */
+    border: 4px solid #00f0ff;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.05);
+  }
+    
