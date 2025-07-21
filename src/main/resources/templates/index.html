@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vimal Kumar | Portfolio</title>
+  
+  <link rel="stylesheet" th:href="@{/style.css}" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+
+  <section class="hero" data-aos="fade-up" data-aos-duration="1000">
+    <div class="intro">
+      <h1>Hi, I’m <br><span class="highlight">Vimal Kumar</span></h1>
+      <p class="subtitle" id="typing-subtitle">A passionate Computer Science student driven by curiosity and code.</p>
+      <div class="buttons">
+        <a th:href="@{/resume/1751563877638_CV-JAVA_SPRINGBOOT_DEVELOPER-VIMAL_KUMAR.pdf}" target="_blank" class="btn primary">Download Resume</a> 
+        <a href="#projects" class="btn secondary">View Projects</a>
+        <a href="https://www.linkedin.com/in/vimalkumar6262/" target="_blank" class="linkedin-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon"> 
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="photo">
+      <img th:src="@{/image.png}" alt="My Photo" class="profile-pic"> 
+    </div>
+  </section>
+
+  <section class="projects" id="projects" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <h3>Portfolio Website</h3>
+        <p class="tech-stack">Spring Boot, Java, HTML, CSS</p>
+        <p class="description">A personal portfolio site to showcase my skills and projects, built with a robust backend.</p>
+        <div class="card-links">
+          <a href="#">GitHub →</a> 
+        </div>
+      </div>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Calc-Calculator</h3>
+        <p class="tech-stack">Java JFrame, NetBeans</p>
+        <p class="description">A user-friendly desktop calculator application for basic arithmetic operations.</p>
+        <div class="card-links">
+          <a href="https://github.com/Vimakumarl6262/calc-calculator-java" target="_blank">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Restaurant Management</h3>
+        <p class="tech-stack">Java JFrame, NetBeans</p>
+        <p class="description">An online restaurant management system with order processing and inventory features.</p>
+        <div class="card-links">
+          <a href="https://github.com/Vimakumarl6262/Restau-management" target="_blank">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="400">
+        <h3>Student Profile Management System</h3>
+        <p class="tech-stack">Spring Boot, Java, MySQL, HTML, CSS</p>
+        <p class="description">A comprehensive system to manage student profiles, records, and academic data.</p>
+        <div class="card-links">
+          <a href="https://github.com/Vimakumarl6262/Student-management-system" target="_blank">GitHub →</a>
+        </div>
+      </div>
+      
+      <div class="card" data-aos="zoom-in" data-aos-delay="500">
+        <h3>Smart Helmet for Accident Prevention and Alcohol Detection</h3>
+        <p class="tech-stack">C++, ESP32, MPU6050, MQ-3, GPS, Relay Module, Arduino</p>
+        <p class="description">Engineered a smart safety helmet with alcohol detection and accident detection sensors. </p>
+        <div class="card-links">
+          <a href="https://github.com/Vimakumarl6262/SmartHelmet" target="_blank">GitHub →</a> 
+        </div>
+      </div>
+    
+      <div class="card" data-aos="zoom-in" data-aos-delay="600">
+        <h3>SmartHire System</h3>
+        <p class="tech-stack">Spring Boot, Java, MySQL, HTML, CSS, Spring AI + Ollama, Email Service</p>
+        <p class="description">An AI-powered smart hiring portal for placements, streamlining candidate screening.</p>
+        <div class="card-links">
+          <a href="https://github.com/Vimakumarl6262/smart-hire" target="_blank">GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about" data-aos="fade-up" data-aos-duration="1000">
+    <h2>About Me</h2>
+    <p class="about-intro">
+      I am currently in my final year pursuing a Bachelor's degree in CSE. Driven by curiosity and a passion for crafting robust backend solutions, I love building scalable applications.
+    </p>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+        <span>2022</span>
+        Sports Coordinator <br> <small>Organized inter-college sports events, fostering teamwork & leadership.</small>
+      </div>
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+        <span>2022</span>
+        Member of Startup Club <br> <small>Explored entrepreneurial concepts and collaborated on innovative ideas.</small>
+      </div>
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+        <span>2024</span>
+        Placement Coordinator <br> <small>Facilitated campus recruitment drives, honing organizational and communication skills.</small>
+      </div>
+    </div>
+    <p class="about-outro">
+      Alongside my studies, I am actively involved in various clubs, constantly seeking opportunities to learn and grow. I am always excited to contribute to innovative teams and explore new technologies.
+    </p>
+  </section>
+
+  <section class="gallery" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-row">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="50">
+        <img th:src="@{/gallery/image.png}" alt="Activity 1">
+        <div class="gallery-overlay">
+          <h3>Anual Program</h3>
+          <p>Organized Anually-college Program.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img th:src="@{/gallery/image2.png}" alt="Activity 2">
+        <div class="gallery-overlay">
+          <h3>College Program</h3>
+          <p>Freshers Party.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+        <img th:src="@{/gallery/image3.png}" alt="Activity 3">
+        <div class="gallery-overlay">
+          <h3>Leadership Workshop</h3>
+          <p>Honing leadership skills.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img th:src="@{/gallery/image4.png}" alt="Activity 4">
+        <div class="gallery-overlay">
+          <h3>College Camp</h3>
+          <p>Youth Leadership Training Camp.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+        <img th:src="@{/gallery/image5.png}" alt="Activity 5">
+        <div class="gallery-overlay">
+          <h3>Technical Fest</h3>
+          <p>Showcasing Innovation in Science Children Congress.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img th:src="@{/gallery/image6.png}" alt="Activity 6">
+        <div class="gallery-overlay">
+          <h3>Freinds Group</h3>
+          <p>Enjoying with friends.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+        <img th:src="@{/gallery/image7.png}" alt="Activity 7">
+        <div class="gallery-overlay">
+          <h3>College Sports</h3>
+          <p>Our Winning Volleyball Team.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+        <img th:src="@{/gallery/image8.png}" alt="Activity 8">
+        <div class="gallery-overlay">
+          <h3>College Trip</h3>
+          <p>Trip with freinds an faculty.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
+        <img th:src="@{/gallery/image9.png}" alt="Activity 9">
+        <div class="gallery-overlay">
+          <h3>Mentoring Session</h3>
+          <p>Mentoring Session during YLTC.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+        <img th:src="@{/gallery/image10.png}" alt="Activity 10">
+        <div class="gallery-overlay">
+          <h3>Sports Camp</h3>
+          <p>Sports camp in Dalhousie.</p>
+        </div>
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="550">
+        <img th:src="@{/gallery/image11.png}" alt="Activity 11">
+        <div class="gallery-overlay">
+          <h3>Panchkula Tour</h3>
+          <p>Panchkula Tour with freinds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Skills</h2>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
+      <div class="skill-label">Java</div>
+      <div class="bar-container">
+        <div class="bar java"><span class="bar-text">90%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="200">
+      <div class="skill-label">Spring Boot</div>
+      <div class="bar-container">
+        <div class="bar spring"><span class="bar-text">85%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
+      <div class="skill-label">C, C++</div>
+      <div class="bar-container">
+        <div class="bar cpp"><span class="bar-text">80%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="400">
+      <div class="skill-label">NetBeans JFrame</div>
+      <div class="bar-container">
+        <div class="bar jframe"><span class="bar-text">70%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="500">
+      <div class="skill-label">Git</div>
+      <div class="bar-container">
+        <div class="bar git"><span class="bar-text">75%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="600">
+      <div class="skill-label">DSA, OOPs</div>
+      <div class="bar-container">
+        <div class="bar dsa"><span class="bar-text">85%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="700">
+      <div class="skill-label">System Design</div>
+      <div class="bar-container">
+        <div class="bar system-design"><span class="bar-text">65%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="800">
+      <div class="skill-label">Multithreading</div>
+      <div class="bar-container">
+        <div class="bar multithreading"><span class="bar-text">60%</span></div>
+      </div>
+    </div>
+
+    <div class="skill-item" data-aos="fade-right" data-aos-delay="900">
+      <div class="skill-label">Front-end</div>
+      <div class="bar-container">
+        <div class="bar frontend"><span class="bar-text">70%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="thankyou" data-aos="fade-up" data-aos-duration="1000">
+    <div class="thankyou-content">
+      <h2>Thank You for Visiting!</h2>
+      <p>
+        I appreciate you taking the time to explore my portfolio.<br>
+        If you have any queries, opportunities, or want to collaborate, feel free to reach out.
+      </p>
+      <p>📧 Contact me: <a href="mailto:vk7889032@gmail.com">vk7889032@gmail.com</a></p>
+    </div>
+  </section>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script th:src="@{/script.js}"></script>
+
+</body>
+</html>

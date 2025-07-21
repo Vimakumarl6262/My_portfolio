@@ -1,0 +1,831 @@
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg-dark: #0e0e0e;
+  --bg-medium: #121212;
+  --bg-light: #1f1f1f;
+  --text-color: #fff;
+  --text-secondary-color: #b0b0b0;
+  --accent-color: #00f0ff; /* Primary vibrant cyan */
+  --accent-secondary-darker: #03dac6; /* Slightly darker teal for gradients/subtle accents */
+  --shadow-color-light: rgba(0, 240, 255, 0.1); /* Lighter shadow for general elements */
+  --shadow-color-medium: rgba(0, 240, 255, 0.3); /* Medium shadow for hover effects/prominent elements */
+  --shadow-color-strong: rgba(0, 240, 255, 0.6); /* Stronger shadow for intense glows/hovers */
+  --font-primary: 'Segoe UI', sans-serif;
+  --card-border-light: rgba(255, 255, 255, 0.08); /* Border for glassmorphism cards */
+  --glass-bg: rgba(31, 31, 31, 0.6); /* Semi-transparent dark background for glass effect */
+}
+
+/* ---------- Base styles ---------- */
+html {
+    scroll-behavior: smooth; /* Smooth scroll for internal links */
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+    /* Subtle background texture for depth */
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 20px 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Accessibility: Focus states for keyboard navigation */
+button:focus, a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- HERO / INTRO ---------- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 80px 10%; /* Increased padding for more prominence */
+    background: var(--bg-dark);
+    min-height: 90vh; /* Make hero section taller */
+    position: relative;
+    z-index: 1;
+    /* Optional: subtle radial gradient behind hero for depth */
+    background: radial-gradient(circle at top left, rgba(0, 240, 255, 0.1) 0%, transparent 50%), var(--bg-dark);
+}
+
+.intro {
+    flex: 1 1 300px; /* Slightly larger flex base */
+    z-index: 2;
+}
+
+.intro h1 {
+    font-size: 4rem; /* Even larger heading */
+    line-height: 1.1;
+    margin-bottom: 15px; /* More space below heading */
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); /* Subtle text shadow */
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary-darker), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text; /* Corrected: Ensures compatibility */
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: text-gradient-shift 5s linear infinite; /* Subtle continuous animation */
+}
+
+.subtitle {
+    margin: 15px 0 40px; /* More vertical space */
+    font-size: 1.5rem; /* Larger subtitle */
+    color: var(--text-secondary-color);
+}
+
+/* ---------- BUTTONS ---------- */
+.buttons {
+    display: flex;
+    gap: 25px; /* Increased gap */
+    margin-top: 40px; /* More space above buttons */
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 16px 32px; /* Even larger padding */
+    border-radius: 10px; /* More rounded */
+    font-weight: 700; /* Bolder font */
+    font-size: 1.15rem; /* Slightly larger font */
+    cursor: pointer;
+    transition: all 0.4s ease; /* Smoother, longer transition */
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.primary {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 0 rgba(0, 240, 255, 0);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn:hover {
+    transform: translateY(-8px); /* More pronounced lift effect */
+    box-shadow: 0 12px 25px var(--shadow-color-medium); /* Stronger shadow */
+    filter: brightness(1.1); /* Slight brightness increase */
+}
+
+.btn.primary:hover {
+    animation: pulse-glow 1.5s infinite alternate; /* Pulsating glow */
+}
+
+/* ---------- LINKEDIN ---------- */
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.05rem; /* Slightly larger font */
+    font-weight: bold;
+    padding: 12px 20px; /* Adjusted padding */
+    border-radius: 10px; /* More rounded */
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin-link:hover {
+    background: var(--accent-color);
+    color: var(--bg-dark);
+    transform: translateY(-5px); /* More pronounced lift */
+}
+
+.social-icon {
+    width: 26px; /* Slightly larger icon */
+    height: 26px;
+    margin-right: 10px; /* More space */
+    vertical-align: middle;
+}
+
+/* ---------- PROFILE IMAGE ---------- */
+.photo {
+    flex: 1 1 300px; /* Slightly larger base */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-pic {
+    width: 320px; /* Even larger */
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent-color); /* Thicker border */
+    box-shadow: 0 0 40px var(--shadow-color-medium); /* Stronger initial glow */
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother, more dynamic transition */
+}
+
+.profile-pic:hover {
+    transform: scale(1.08) rotate(5deg); /* More pronounced scale and rotation */
+    box-shadow: 0 0 70px var(--shadow-color-strong); /* Intense glow on hover */
+    filter: brightness(1.05); /* Slight brightness increase */
+}
+
+/* ---------- GENERAL SECTION HEADINGS ---------- */
+h2 {
+    font-size: 3.5rem; /* Even larger headings */
+    margin-bottom: 60px; /* More space below headings */
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary-darker), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text; /* Corrected */
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: text-gradient-shift 5s linear infinite; /* Continuous gradient shift */
+    display: inline-block;
+    padding-bottom: 8px; /* More space for underline-like effect */
+    border-bottom: 3px solid rgba(0, 240, 255, 0.3); /* Thicker, more prominent line */
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); /* Subtle text shadow for headings */
+}
+
+/* ---------- PROJECTS SECTION ---------- */
+.projects {
+    padding: 100px 10%; /* Increased padding */
+    text-align: center;
+    background: var(--bg-medium);
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; /* Increased gap between cards */
+    justify-content: center;
+}
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); /* Stronger blur effect for glass */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border-light);
+    padding: 35px; /* Increased padding */
+    width: 350px; /* Larger card width */
+    border-radius: 20px; /* More rounded corners */
+    text-align: left;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother, more dynamic transition */
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    position: relative; /* For potential pseudo-elements/overlays */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+.card::before { /* Subtle internal glow effect for cards */
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,240,255,0.05) 0%, transparent 60%);
+    transform: rotate(45deg);
+    transition: transform 0.8s ease-out;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1; /* Place behind card content */
+}
+
+.card:hover::before {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+
+.card:hover {
+    transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateY(-15px); /* More pronounced 3D tilt and lift */
+    box-shadow: 0 20px 50px var(--shadow-color-strong); /* Enhanced shadow on hover */
+    border: 1px solid var(--accent-color); /* Border highlights on hover */
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 1.7rem; /* Larger project title */
+    color: var(--text-color);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle text shadow */
+}
+
+.card .tech-stack {
+    font-size: 1rem; /* Slightly larger tech stack text */
+    color: var(--text-secondary-color);
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+.card .description {
+    font-size: 1.05rem; /* Slightly larger description */
+    color: var(--text-color);
+    margin-bottom: 20px; /* More space below description */
+    min-height: 70px; /* Ensure consistent card height */
+    line-height: 1.6;
+}
+
+.card-links {
+    margin-top: 20px; /* More space above links */
+    display: flex;
+    gap: 20px; /* Increased gap */
+}
+
+.card-links a {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: underline; /* Default underline for clarity */
+}
+
+.card-links a:hover {
+    color: var(--accent-secondary-darker);
+    text-decoration: none; /* Remove underline on hover */
+    transform: translateX(5px); /* Slight movement */
+}
+
+
+/* ---------- ABOUT SECTION ---------- */
+.about {
+    padding: 100px 10%; /* Increased padding */
+    text-align: center;
+    background: var(--bg-dark);
+}
+
+.about-intro, .about-outro {
+    font-size: 1.2rem; /* Larger text */
+    color: var(--text-secondary-color);
+    max-width: 900px; /* Wider text block */
+    margin: 0 auto 40px auto; /* More vertical space */
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Increased gap */
+    justify-content: center;
+    margin: 50px auto 30px auto; /* More vertical space */
+    max-width: 1100px; /* Wider timeline */
+}
+
+.timeline-item {
+    background: var(--bg-light);
+    padding: 30px; /* More padding */
+    width: 300px; /* Wider timeline items */
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 0 20px var(--shadow-color-light); /* Deeper shadow */
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px); /* More pronounced lift */
+    box-shadow: 0 10px 30px var(--shadow-color-medium);
+}
+
+.timeline-item span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.4rem; /* Larger year */
+    letter-spacing: 1px; /* Subtle letter spacing */
+}
+
+.timeline-item small {
+    display: block;
+    font-size: 1rem; /* Slightly larger detail text */
+    color: var(--text-secondary-color);
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+
+/* ---------- GALLERY SECTION ---------- */
+.gallery {
+    padding: 100px 10%; /* Increased padding */
+    text-align: center;
+    background: var(--bg-medium);
+}
+
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased gap */
+    justify-content: center;
+    max-width: 1300px; /* Max width for gallery */
+    margin: 0 auto;
+}
+
+/* Gallery Item with Hover Effects */
+.gallery-item {
+    position: relative; /* For overlay positioning */
+    width: 300px; /* Same as image width */
+    height: 220px; /* Same as image height */
+    border-radius: 15px;
+    overflow: hidden; /* Hide overflowing overlay initially */
+    box-shadow: 0 0 20px var(--shadow-color-light);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Apply to image too */
+    display: block; /* Remove extra space below image */
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: grayscale(100%) brightness(0.8); /* Initial grayscale and slight darkening */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1) rotate(2deg); /* Zoom and slight rotate on hover */
+    filter: grayscale(0%) brightness(1.1); /* Full color and brighter on hover */
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.4s ease;
+    border-radius: 15px;
+    color: var(--text-color);
+    pointer-events: none; /* Allow clicks to pass through to the image */
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1; /* Visible on hover */
+}
+
+.gallery-overlay h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+.gallery-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--text-secondary-color);
+}
+
+
+/* ---------- SKILLS SECTION ---------- */
+.skills {
+    padding: 100px 10%; /* Increased padding */
+    text-align: center;
+    background: var(--bg-dark);
+}
+
+.skill-item {
+  margin: 25px auto; /* More vertical space */
+  max-width: 500px; /* Wider skill items */
+  text-align: left;
+  /* Define a default variable for animation target */
+  --skill-fill-percentage: 0%;
+}
+
+/* Skill widths - setting the CSS variable for each skill */
+.java { --skill-fill-percentage: 90%; }
+.spring { --skill-fill-percentage: 85%; }
+.cpp { --skill-fill-percentage: 80%; }
+.jframe { --skill-fill-percentage: 70%; }
+.git { --skill-fill-percentage: 75%; }
+.dsa { --skill-fill-percentage: 85%; }
+.system-design { --skill-fill-percentage: 65%; }
+.multithreading { --skill-fill-percentage: 60%; }
+.frontend { --skill-fill-percentage: 70%; }
+
+/* NEW SKILL BAR WIDTHS based on your CV */
+.spring-mvc { --skill-fill-percentage: 75%; }
+.hibernate-jpa { --skill-fill-percentage: 80%; }
+.mysql { --skill-fill-percentage: 85%; }
+.html-css { --skill-fill-percentage: 70%; }
+.restful-apis { --skill-fill-percentage: 80%; }
+.microservices { --skill-fill-percentage: 60%; }
+.java8 { --skill-fill-percentage: 88%; }
+
+
+.skill-label {
+  font-weight: bold;
+  margin-bottom: 8px; /* More space */
+  color: var(--text-color);
+  font-size: 1.2rem; /* Larger label */
+}
+
+.bar-container {
+  background: rgba(51, 51, 51, 0.7);
+  height: 28px; /* Taller bar */
+  border-radius: 14px; /* More rounded */
+  overflow: hidden;
+  margin-bottom: 12px;
+  position: relative;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.6); /* Deeper inner shadow */
+}
+
+.bar {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 14px;
+  width: var(--skill-fill-percentage);
+  animation: fill-bar 2s ease-in-out forwards;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px; /* More padding for the text */
+}
+
+.bar-text {
+  font-size: 14px; /* Slightly larger text */
+  color: var(--bg-dark);
+  font-weight: bold;
+  opacity: 0.95; /* More opaque */
+}
+
+/* ---------- THANK-YOU SECTION ---------- */
+.thankyou {
+    height: auto;
+    width: 85%; /* Wider section */
+    margin: 80px auto 0 auto; /* More margin top */
+    padding: 70px 30px; /* Increased padding */
+    background: var(--bg-medium);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 3px solid var(--accent-color); /* Thicker border */
+    border-radius: 15px 15px 0 0; /* More rounded top corners */
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+
+.thankyou-content {
+    max-width: 800px; /* Wider content */
+}
+
+.thankyou h2 {
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary-darker), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: text-gradient-shift 5s linear infinite;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.thankyou p {
+    font-size: 1.25rem; /* Larger text */
+    line-height: 1.8;
+    color: var(--text-secondary-color);
+    margin-bottom: 20px;
+}
+
+.thankyou a {
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+.thankyou a:hover {
+    text-decoration: underline;
+    color: var(--accent-secondary-darker);
+}
+
+/* ---------- ANIMATIONS (Pure CSS Animations) ---------- */
+@keyframes text-gradient-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0px var(--accent-color); }
+    50% { box-shadow: 0 0 35px var(--accent-color), 0 0 60px var(--accent-color); } /* Stronger glow */
+    100% { box-shadow: 0 0 0px var(--accent-color); }
+}
+
+@keyframes fill-bar {
+  from { width: 0; }
+  to { width: var(--skill-fill-percentage); }
+}
+
+/* ---------- RESPONSIVE TWEAKS ---------- */
+@media (max-width: 1200px) { /* Larger screens/desktops */
+    .hero, .projects, .about, .gallery, .skills {
+        padding: 80px 8%;
+    }
+    .intro h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .profile-pic {
+        width: 280px;
+        height: 280px;
+    }
+    .card {
+        width: 300px;
+        padding: 30px;
+    }
+    .timeline-item {
+        width: 280px;
+        padding: 25px;
+    }
+    .gallery-row img {
+        width: 250px;
+        height: 180px;
+    }
+    .skill-item {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 992px) { /* Medium screens like tablets */
+    .hero, .projects, .about, .gallery, .skills {
+        padding: 60px 8%;
+    }
+    .intro h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+    .card {
+        width: 280px;
+        padding: 25px;
+    }
+    .timeline-item {
+        width: 250px;
+        padding: 20px;
+    }
+    .gallery-row img {
+        width: 200px;
+        height: 160px;
+    }
+    .skill-item {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) { /* Small screens like larger phones */
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 6%;
+      min-height: auto;
+    }
+
+    .intro h1 {
+      font-size: 2.8rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-width: 3px;
+      box-shadow: 0 0 20px var(--shadow-color-medium);
+    }
+
+    .buttons {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .linkedin-link {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    .social-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .projects, .about, .gallery, .skills {
+        padding: 70px 6%;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        border-bottom-width: 2px;
+    }
+
+    .project-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 400px;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .timeline {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .timeline-item {
+        width: 90%;
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .gallery-row img {
+      width: 48%; /* Two images per row on smaller screens */
+      height: auto;
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
+    .skill-item {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+
+    .bar-container {
+        height: 22px;
+        border-radius: 11px;
+    }
+    .bar {
+        border-radius: 11px;
+        padding-right: 8px;
+    }
+    .bar-text {
+        font-size: 12px;
+    }
+
+    .thankyou {
+      width: 95%;
+      padding: 50px 20px;
+      margin-top: 50px;
+      border-radius: 10px 10px 0 0;
+      border-top-width: 2px;
+    }
+
+    .thankyou h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .thankyou p {
+      font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) { /* Very small mobile screens */
+    .hero {
+        padding: 40px 5%;
+    }
+    .intro h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    .subtitle {
+        font-size: 1rem;
+        margin: 10px 0 25px;
+    }
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+    .btn {
+        width: 100%;
+        max-width: 220px;
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    .linkedin-link {
+        width: 100%;
+        max-width: 220px;
+        justify-content: center;
+    }
+
+    .projects, .about, .gallery, .skills {
+        padding: 50px 5%;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .card {
+        width: 95%;
+        padding: 20px;
+    }
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    .card .description {
+        font-size: 0.95rem;
+        min-height: 50px;
+    }
+    .timeline-item {
+        width: 95%;
+    }
+    .gallery-row img {
+        width: 80%; /* Single column */
+        max-width: 280px;
+    }
+    .thankyou {
+        width: 98%;
+        padding: 40px 10px;
+    }
+    .thankyou h2 {
+        font-size: 2rem;
+    }
+    .thankyou p {
+        font-size: 0.95rem;
+    }
+}
